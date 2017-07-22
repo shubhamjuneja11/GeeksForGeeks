@@ -21,7 +21,7 @@ public class NthNode{
 
 	public void push(int data){
 		Node t=new Node(data);
-		t.next=head;
+		t.neaxt=head;
 		head=t;
 
 	}
