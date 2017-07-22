@@ -5,7 +5,7 @@ class Node{
 		this.data=data;
 	}
 }
-public class Sortedinsert{
+public class RecursiveReverse{
 	Node head;
 	public void push(int d){
 		Node node=new Node(d);
@@ -23,28 +23,20 @@ public class Sortedinsert{
 			temp=temp.next;
 		}
 	}
-	public void insert(int n){
-		Node node=new Node(n);
-		Node temp=head;
-		if(head==null ||head.data>n)
-		{
-			node.next=head;
-			head=node;
-			return ;
-		}
-		while(temp.next!=null && temp.next.data<n)
-			temp=temp.next;
-		node.next=temp.next;
-		temp.next=node;
+	public Node reverse(Node node){
+
+		if(node==null)
+			return;
+		node.next=reverse(node.next);
 
 	}
 	
 	public static void main(String s[]){
-		Sortedinsert list=new Sortedinsert();
+		RecursiveReverse list=new RecursiveReverse();
 		list.push(5);list.push(4);list.push(2);list.push(1);
 		list.print();
 		list.p("\n");
-		list.insert(3);
+		list.reverse(head);
 		list.print();
 	
 	}
